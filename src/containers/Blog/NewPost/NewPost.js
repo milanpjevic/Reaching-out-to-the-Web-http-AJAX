@@ -6,29 +6,30 @@ import './NewPost.css';
 
 class NewPost extends Component {
     state = {
-        title: '',
-        content: '',
-        author: 'Milan',
-        submitted: false,
+      title: '',
+      content: '',
+      author: 'Milan',
+      submitted: false,
     }
 
     componentDidMount () {
-        console.log(this.props);
+      // If unauth => this.props.history.replace("/posts")
+      console.log(this.props);
     }
 
     postDataHandler = () => {
-        const data = {
-            title: this.state.title,
-            body: this.state.body,
-            author: this.state.author,
-        }
-        axios.post("/posts", data)
-        .then(response => {
-            console.log(response);
-            // this.setState({submitted: true});
-            // this.props.history.replace("/posts");
-            this.props.history.push("/posts");
-        })
+      const data = {
+        title: this.state.title,
+        body: this.state.body,
+        author: this.state.author,
+      }
+      axios.post("/posts", data)
+      .then(response => {
+        console.log(response);
+        // this.setState({submitted: true});
+        // this.props.history.replace("/posts");
+        this.props.history.push("/posts");
+      })
     }
  
     render () {

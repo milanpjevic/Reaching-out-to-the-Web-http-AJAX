@@ -9,7 +9,6 @@ class FullPost extends Component {
 
     componentDidMount() {
       this.loadData();
-        
     }
 
     componentDidUpdate() {
